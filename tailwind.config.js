@@ -101,6 +101,9 @@ export default {
           xl: "1280px",
         },
       },
+      backgroundImage: {
+        "footer-layer": "url('/src/assets/images/footer_layer.png')",
+      },
     },
   },
   plugins: [],

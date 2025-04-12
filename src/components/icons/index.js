@@ -4,3 +4,6 @@ export { default as ShoppingCart } from "./ShoppingCart";
 export { default as User } from "./User";
 export { default as Close } from "./Close";
 export { default as Menu } from "./Menu";
+export { default as X } from "./X";
+export { default as Instagram } from "./Instagram";
+export { default as Telegram } from "./Telegram";
