@@ -103,6 +103,9 @@ export default {
       },
       backgroundImage: {
         "footer-layer": "url('/src/assets/images/footer_layer.png')",
+        slider: "url('/src/assets/images/slider.jpg')",
+        slider2: "url('/src/assets/images/slider2.jpg')",
+        slider3: "url('/src/assets/images/slider3.jpg')",
       },
     },
   },

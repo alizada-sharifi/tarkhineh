@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Banner } from "../components/banner";
+import { HomePageMenu } from "../components/homePageMenu";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <Banner />
+      <HomePageMenu />
+    </>
+  );
 }
 
-export default Home
+export default Home;

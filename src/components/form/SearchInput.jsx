@@ -1,12 +1,12 @@
-import {useNavigate} from 'react-router';
-import Search from '../icons/Search';
-import {useState} from 'react';
+import { useNavigate } from "react-router";
+import Search from "../icons/Search";
+import { useState } from "react";
 
 function SearchInput() {
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
   function searchHandler() {
-    navigate('/');
+    navigate("/");
     console.log(searchValue);
   }
 
