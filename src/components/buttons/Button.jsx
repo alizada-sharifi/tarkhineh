@@ -9,7 +9,7 @@ function Button(props) {
         to={href}
         {...rest}
         className={cn(
-          "bg-primary py-1.5 px-3 text-xs font-medium text-white rounded-md md:py-2 md:px-6 md:text-base ",
+          "bg-primary py-1.5 px-3 text-xs font-medium text-white rounded-md md:py-2 md:px-6 md:text-base",
           props.className
         )}
       >

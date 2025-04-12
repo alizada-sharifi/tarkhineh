@@ -7,3 +7,7 @@ export { default as Menu } from "./Menu";
 export { default as X } from "./X";
 export { default as Instagram } from "./Instagram";
 export { default as Telegram } from "./Telegram";
+export { default as LeftArrow } from "./LeftArrow";
+export { default as Diagram } from "./Diagram";
+export { default as HomeWifi } from "./HomeWifi";
+export { default as MenuBoard } from "./MenuBoard";

@@ -9,31 +9,31 @@ function Container() {
   const itemsData = [
     {
       image: mainCourse,
-      text: "غذای اصلی",
+      title: "غذای اصلی",
     },
     {
       image: appetizer,
-      text: "پیش غذا",
+      title: "پیش غذا",
     },
     {
       image: dessert,
-      text: "دسر",
+      title: "دسر",
     },
     {
       image: drink,
-      text: "نوشیدنی",
+      title: "نوشیدنی",
     },
   ];
 
   return (
-    <div className="container py-8">
+    <div className="container py-16">
       <SearchInput />
       <h2 className="font-bold text-base text-neutral-800 text-center md:text-2xl">
         منوی رستوران
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-10">
         {itemsData.map((item, index) => {
-          return <Item image={item.image} />;
+          return <Item {...item} key={index} />;
         })}
       </div>
     </div>

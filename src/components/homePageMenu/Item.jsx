@@ -15,7 +15,7 @@ function Item({ image, title }) {
         className=" absolute -bottom-5 shadow-lg md:py-2.5 md:px-6 lg:text-lg lg:px-7 xl:-bottom-8"
         href={ROUTES.MENU}
       >
-        غذای اصلی
+        {title}
       </Button>
     </div>
   );
