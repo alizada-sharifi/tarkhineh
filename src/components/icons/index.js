@@ -12,3 +12,4 @@ export { default as Diagram } from "./Diagram";
 export { default as HomeWifi } from "./HomeWifi";
 export { default as MenuBoard } from "./MenuBoard";
 export { default as Gallery } from "./Gallery";
+export { default as Microscope } from "./Microscope";
