@@ -1,7 +1,7 @@
-import React from "react";
 import { Banner } from "../components/banner";
-import { HomePageMenu } from "../components/homePageMenu";
-import { Introduction } from "../components/introduction";
+import { HomePageMenu } from "../components/home/homePageMenu";
+import { Introduction } from "../components/home/introduction";
+import { Branches } from "../components/home/branches";
 
 function Home() {
   return (
@@ -9,6 +9,7 @@ function Home() {
       <Banner />
       <HomePageMenu />
       <Introduction />
+      <Branches />
     </>
   );
 }

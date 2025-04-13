@@ -11,3 +11,4 @@ export { default as LeftArrow } from "./LeftArrow";
 export { default as Diagram } from "./Diagram";
 export { default as HomeWifi } from "./HomeWifi";
 export { default as MenuBoard } from "./MenuBoard";
+export { default as Gallery } from "./Gallery";
