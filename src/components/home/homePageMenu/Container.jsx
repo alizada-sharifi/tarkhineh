@@ -27,11 +27,11 @@ function Container() {
   ];
 
   return (
-    <div className="container py-16">
+    <div className="container pb-8 md:pt-8 md:pb-16">
       <SearchInput />
 
       <Title text="  منوی رستوران" />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-10">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6  gap-y-10 mt-10">
         {itemsData.map((item, index) => {
           return <Item {...item} key={index} />;
         })}

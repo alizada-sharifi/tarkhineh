@@ -8,13 +8,18 @@ import { offers } from "../data/branches/offers";
 import { popular } from "../data/branches/popularFood";
 import ROUTES from "../router/routePath";
 import { Testmonial } from "../components/branches/testmonial";
+import { SearchInput } from "../components/form";
 
 function Branches() {
   const navigate = useNavigate();
   return (
     <>
       <Banner />
-      <Container data={offers} id={"offers"} title={"غذاهای محبوب"}  />
+      <div className="container">
+        <SearchInput />
+      </div>
+
+      <Container data={offers} id={"offers"} title={"غذاهای محبوب"} />
       <Container
         data={popular}
         id={"popular"}
