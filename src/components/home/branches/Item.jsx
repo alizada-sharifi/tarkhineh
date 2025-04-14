@@ -10,7 +10,7 @@ function Item({ title, address, image }) {
       <div
         className={`${image} bg-cover bg-center w-36 h-20 md:w-72 md:h-36 lg:h-56 relative`}
       >
-        <div className="w-full h-full bg-black/60  justify-center items-center hidden group-hover:flex">
+        <div className="w-full h-full bg-black/60  justify-center items-center hidden md:group-hover:flex">
           <Gallery />
         </div>
       </div>

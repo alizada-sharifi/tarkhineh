@@ -10,7 +10,7 @@ function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <button className="block md:hidden" onClick={() => setIsOpen(true)}>
+      <button className="block lg:hidden" onClick={() => setIsOpen(true)}>
         <Menu className="fill-primary" />
       </button>
       <div

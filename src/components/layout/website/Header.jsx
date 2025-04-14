@@ -42,7 +42,7 @@ function Header() {
             <Logo />
           </NavLink>
 
-          <nav className="items-center hidden md:flex gap-4 ">
+          <nav className="items-center hidden lg:flex gap-4 ">
             {navlinkList.map((item, index) => {
               return (
                 <NavLink
