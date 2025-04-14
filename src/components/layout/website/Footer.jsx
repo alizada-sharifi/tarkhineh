@@ -6,7 +6,7 @@ import MessageForm from "./MessageForm";
 function Footer() {
   return (
     <footer className="overflow-hidden text-white bg-center bg-cover bg-footer-layer">
-      <div className="w-full h-full bg-black/85">
+      <div className="w-full h-full bg-black/65">
         <div className="container">
           <div className="py-10">
             <div className="grid grid-cols-12 gap-8">
