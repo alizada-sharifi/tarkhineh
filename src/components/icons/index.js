@@ -15,3 +15,4 @@ export { default as MenuBoard } from "./MenuBoard";
 export { default as Gallery } from "./Gallery";
 export { default as Microscope } from "./Microscope";
 export { default as EmptyHeart } from "./EmptyHeart";
+export { default as Note } from "./Note";
