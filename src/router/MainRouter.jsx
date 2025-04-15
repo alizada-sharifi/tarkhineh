@@ -1,5 +1,5 @@
 import { MainLayout } from "../layouts";
-import { Branches, Home, NotFound } from "../pages";
+import { Branches, Home, Menu, NotFound } from "../pages";
 import ROUTES from "./routePath";
 
 const MainRouter = [
@@ -14,6 +14,10 @@ const MainRouter = [
       {
         path: ROUTES.BRANCH,
         element: <Branches />,
+      },
+      {
+        path: ROUTES.MENU,
+        element: <Menu />,
       },
       {
         path: "*",
