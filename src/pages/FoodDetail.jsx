@@ -1,17 +1,41 @@
 import { useEffect, useState } from "react";
-import { EmptyHeart, LeftToggle } from "../components/icons";
+import {
+  EmptyHeart,
+  LeftToggle,
+  Trash,
+  EmptyStar,
+  FullStar,
+  ShoppingCart,
+  FullHeart,
+} from "../components/icons";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router";
-import { convertToFa } from "../helper/functions";
+import {
+  convertToFa,
+  isInCart,
+  quantityCount,
+  isInFavorite,
+} from "../helper/functions";
 import Rating from "react-rating";
-import { EmptyStar, FullStar, ShoppingCart } from "../components/icons";
-import ROUTES from "../router/routePath";
-import { Button } from "../components/buttons";
+import { useDispatch, useSelector } from "react-redux";
+import { increase, decrease, addItem, removeItem } from "../stores/cartSlice";
+import { ClipLoader } from "react-spinners";
+import { ShowToast } from "../helper";
+import { likeItem, disLikeItem } from "../stores/favoriteSlice";
 
 function FoodDetail() {
-  const slug = useParams().slug;
+  const { slug } = useParams();
   const [foodData, setFoodData] = useState({});
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const favorite = useSelector((state) => state.favorite);
+
+  const cartState = useSelector((state) => state.cart);
+  const data = useSelector((store) =>
+    store.product.products.find((item) => item.slug === slug)
+  );
+
+  const isLoggedIn = useSelector((state) => state.auth);
 
   useEffect(() => {
     axios
@@ -19,13 +43,39 @@ function FoodDetail() {
       .then((res) => setFoodData(res.data[0]));
   }, [slug]);
 
+  if (!foodData || Object.keys(foodData).length === 0) {
+    return (
+      <div className="min-h-[calc(100vh_-_535px)] flex justify-center items-center">
+        <ClipLoader size={50} color="#417F56" />
+      </div>
+    );
+  }
+
+  if (!data) {
+    return <div>محصول مورد نظر پیدا نشد</div>;
+  }
+
+  const addToCart = () => {
+    dispatch(addItem(data));
+    ShowToast("محصول به سبد خرید اضافه شد", "success");
+  };
+
+  const likeHandler = () => {
+    if (isLoggedIn) {
+      dispatch(likeItem(data));
+      ShowToast("محصول به علاقه‌مندی ها اضافه شد", "success");
+    } else {
+      ShowToast("شما ابتدا باید وارد شوید", "error");
+    }
+  };
+
   return (
     <>
       {/* ============header section ================ */}
       <div className="bg-primary py-6">
         <div className="container flex mx-auto items-center text-white">
           <LeftToggle
-            className={"hover:cursor-pointer"}
+            className="hover:cursor-pointer"
             onClick={() => navigate(-1)}
           />
           <h3 className="font-bold flex-1 text-center pl-10 text-xl">
@@ -38,16 +88,27 @@ function FoodDetail() {
         <img
           src={foodData.image}
           alt={foodData.title}
-          className="w-full  rounded-lg mb-[17px] md:w-[350px]"
+          className="w-full rounded-lg mb-[17px] md:w-[350px]"
         />
 
-        <div className="md:flex-1 ">
+        <div className="md:flex-1">
           <div className="flex items-center justify-between mb-[17px] px-0.5">
             <h3 className="font-bold text-lg md:text-2xl">{foodData.title}</h3>
 
             <div className="flex items-center gap-x-4 text-[#717171]">
-              <EmptyHeart className={"size-6"} />
-              <Link to={ROUTES.CART} className="scale-[1.5]">
+              {isInFavorite(favorite, data.id) && isLoggedIn ? (
+                <button
+                  className="scale-[1.65]"
+                  onClick={() => dispatch(disLikeItem(data))}
+                >
+                  <FullHeart />
+                </button>
+              ) : (
+                <button className="scale-[1.5]" onClick={likeHandler}>
+                  <EmptyHeart />
+                </button>
+              )}
+              <Link to="/cart" className="scale-[1.5]">
                 <ShoppingCart className={"size-4"} />
               </Link>
             </div>
@@ -74,8 +135,44 @@ function FoodDetail() {
             </div>
           </div>
 
-          <div className="text-end">
-            <Button>افزودن به سبد خرید</Button>
+          {/* ======================== */}
+          <div className="flex items-center gap-x-2.5 justify-center md:justify-end">
+            {isInCart(cartState, data.id) && isLoggedIn ? (
+              <button
+                onClick={() => dispatch(increase(data))}
+                className="bg-[#417F56] text-white w-6 h-6 rounded mt-1 font-bold flex items-center justify-center md:w-8 md:h-8 scale-110"
+              >
+                +
+              </button>
+            ) : (
+              <button
+                className="bg-[#417F56] text-white rounded-md text-xs font-medium py-2.5 px-[35px] md:text-sm lg:py-2.5 lg:px-5 xl:px-12"
+                onClick={addToCart}
+              >
+                افزودن به سبد خرید
+              </button>
+            )}
+            {quantityCount(cartState, data.id) > 0 && isLoggedIn && (
+              <span className="text-[#417F56] font-semibold mt-1 md:text-lg">
+                {convertToFa(quantityCount(cartState, data.id))}
+              </span>
+            )}
+            {quantityCount(cartState, data.id) === 1 && isLoggedIn && (
+              <button
+                onClick={() => dispatch(removeItem(data))}
+                className="bg-[#417F56] text-white w-6 h-6 rounded mt-1 font-bold flex items-center justify-center md:w-8 md:h-8 scale-110"
+              >
+                <Trash />
+              </button>
+            )}
+            {quantityCount(cartState, data.id) > 1 && isLoggedIn && (
+              <button
+                onClick={() => dispatch(decrease(data))}
+                className="bg-[#417F56] text-white w-6 h-6 rounded mt-1 font-bold flex items-center justify-center md:w-8 md:h-8 scale-110"
+              >
+                -
+              </button>
+            )}
           </div>
         </div>
       </div>
