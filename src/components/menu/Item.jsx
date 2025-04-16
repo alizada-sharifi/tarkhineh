@@ -139,7 +139,9 @@ function Item({
 
           {isInCart(state, id) && isLoggedIn ? (
             <Link to="/cart">
-              <Button>مشاهده سبد خرید</Button>
+              <Button className=" py-1.5 px-2 sm:p-2.5 lg:text-sm lg:px-5 xl:px-12 bg-transparent border border-primary text-primary">
+                مشاهده سبد خرید
+              </Button>
             </Link>
           ) : (
             <Button
