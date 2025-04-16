@@ -1,11 +1,12 @@
-import { NavLink } from "react-router";
-import { Logo, Search, ShoppingCart, User } from "../../icons";
+import { NavLink, useNavigate } from "react-router";
+import { Logo, Search, ShoppingCart } from "../../icons";
 import ROUTES from "../../../router/routePath";
 import { cn } from "../../../helper/common";
 import MobileNavbar from "./MobileNavbar";
 import Login from "../../auth/Login";
 
 function Header() {
+  const navigate = useNavigate();
   const navlinkList = [
     {
       href: ROUTES.HOME,
@@ -60,7 +61,10 @@ function Header() {
           </nav>
 
           <div className="flex items-center gap-2 [&>*]:p-2 [&>*]:bg-primary-100 [&>*]:rounded [&_svg]:fill-primary">
-            <button className="hidden sm:block">
+            <button
+              className="hidden sm:block"
+              onClick={() => navigate(ROUTES.RESULT)}
+            >
               <Search />
             </button>
             <NavLink

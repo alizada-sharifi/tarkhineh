@@ -1,17 +1,19 @@
 import { useNavigate } from "react-router";
 import Search from "../icons/Search";
 import { useState } from "react";
+import { cn } from "../../helper/common";
+import ROUTES from "../../router/routePath";
 
-function SearchInput() {
+function SearchInput({ className }) {
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
   function searchHandler() {
-    navigate("/");
+    navigate(ROUTES.RESULT);
     console.log(searchValue);
   }
 
   return (
-    <div className="relative md:hidden ">
+    <div className={cn("relative md:hidden", className)}>
       <input
         onChange={(e) => setSearchValue(e.target.value)}
         type="text"

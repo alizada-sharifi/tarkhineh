@@ -18,3 +18,4 @@ export { default as EmptyHeart } from "./EmptyHeart";
 export { default as Note } from "./Note";
 export { default as EmptyStar } from "./EmptyStar";
 export { default as FullStar } from "./FullStar";
+export { default as NotFound } from "./NotFound";
