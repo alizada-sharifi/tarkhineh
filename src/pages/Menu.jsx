@@ -1,8 +1,17 @@
+import { useEffect, useState } from "react";
 import { Banner } from "../components/banner";
 
 import Item from "../components/menu/Item";
+import axios from "axios";
 
 function Menu() {
+  const [foods, setFoods] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/foods")
+      .then((response) => setFoods(response.data));
+  }, []);
+
   return (
     <>
       <Banner />
@@ -26,8 +35,10 @@ function Menu() {
       </div>
 
       {/* <Category query={query} setQuery={setQuery} /> */}
-      <div className="grid lg:grid-cols-2 gap-4 container">
-        <Item />
+      <div className="grid lg:grid-cols-2 gap-8 container py-8">
+        {foods.map((food) => {
+          return <Item {...food} />;
+        })}
       </div>
     </>
   );

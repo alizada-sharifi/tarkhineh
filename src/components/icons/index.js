@@ -19,3 +19,4 @@ export { default as Note } from "./Note";
 export { default as EmptyStar } from "./EmptyStar";
 export { default as FullStar } from "./FullStar";
 export { default as NotFound } from "./NotFound";
+export { default as LeftToggle } from "./LeftToggle";

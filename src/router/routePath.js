@@ -1,6 +1,5 @@
 const ROUTES = {
   LOGIN: "/login",
-  REGISTER: "/signup",
   HOME: "/",
   RESULT: "/result",
   ABOUT: "/about",
@@ -8,7 +7,9 @@ const ROUTES = {
   BRANCH: "/branches",
   PRIVACY: "/privacy",
   MENU: "/menu",
+  FOODDETAIL: "/menu/:slug",
   FRANCHISE: "/franchise",
+  CART: "/cart",
 };
 
 export default ROUTES;
