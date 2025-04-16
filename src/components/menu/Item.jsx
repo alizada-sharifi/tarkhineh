@@ -52,7 +52,7 @@ function Item({
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center justify-between gap-x-8">
+          <div className="flex items-center justify-between gap-2  sm:gap-x-4 md:gap-6">
             <button className="mt-0.5 lg:absolute lg:left-4 lg:top-4 scale-[1.1] lg:scale-[1.5]">
               <EmptyHeart />
             </button>
@@ -63,7 +63,12 @@ function Item({
               fullSymbol={<FullStar />}
             />
 
-            <Button href="/">افزودن به سبد خرید</Button>
+            <Button
+              href="/"
+              className="bg-[#417F56] text-white border border-[#417F56] rounded sm:rounded-md text-[10px] py-1.5 px-2 sm:p-[9px] font-medium lg:rounded lg:text-sm lg:px-5 xl:px-12 "
+            >
+              افزودن به سبد خرید
+            </Button>
           </div>
         </div>
       </div>
