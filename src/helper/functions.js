@@ -85,13 +85,13 @@ const createQueryObject = (currentQuery, newQuery) => {
 };
 
 const isInCart = (state, id) => {
-  const result = !!state.selectedItems.find((item) => item.id === id);
-  return result;
+  if (!state || !Array.isArray(state.selectedItems)) return false;
+  return !!state.selectedItems.find((item) => item.id === id);
 };
 
 const isInFavorite = (state, id) => {
-  const result = !!state.selectedItems.find((item) => item.id === id);
-  return result;
+  if (!state || !Array.isArray(state.selectedItems)) return false;
+  return !!state.selectedItems.find((item) => item.id === id);
 };
 
 const quantityCount = (state, id) => {

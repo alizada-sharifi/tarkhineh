@@ -37,7 +37,7 @@ function Menu() {
       {/* <Category query={query} setQuery={setQuery} /> */}
       <div className="grid lg:grid-cols-2 gap-8 container py-8">
         {foods.map((food) => {
-          return <Item {...food} />;
+          return <Item {...food} key={food.id} />;
         })}
       </div>
     </>

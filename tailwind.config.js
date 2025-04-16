@@ -65,6 +65,7 @@ export default {
           1400: "#08100B",
         },
         neutral: {
+          50: "#fff2f2",
           100: "#F9F9F9",
           200: "#e1e1e1",
           300: "#EDEDED",
@@ -100,6 +101,9 @@ export default {
           lg: "1024px",
           xl: "1280px",
         },
+      },
+      screens: {
+        xs: "380px",
       },
       backgroundImage: {
         "footer-layer": "url('/src/assets/images/footer_layer.png')",
