@@ -3,6 +3,7 @@ import { Logo, Search, ShoppingCart, User } from "../../icons";
 import ROUTES from "../../../router/routePath";
 import { cn } from "../../../helper/common";
 import MobileNavbar from "./MobileNavbar";
+import Login from "../../auth/Login";
 
 function Header() {
   const navlinkList = [
@@ -68,12 +69,7 @@ function Header() {
             >
               <ShoppingCart />
             </NavLink>
-            <NavLink
-              to="/login"
-              className={({ isActive }) => (isActive ? "bg-primary" : "")}
-            >
-              <User />
-            </NavLink>
+            <Login />
           </div>
         </div>
       </div>

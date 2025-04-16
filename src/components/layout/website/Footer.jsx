@@ -35,10 +35,10 @@ function Footer() {
               <div className="col-span-6 space-y-5 md:col-span-4 lg:col-span-3">
                 <p className="text-xl font-bold">{"شعبه‌های ترخینه"}</p>
                 <div className="flex flex-col gap-4 text-sm">
-                  <Link to={ROUTES.HOME}>{"شعبه کابل"}</Link>
-                  <Link to={ROUTES.HOME}>{"شعبه هرات"}</Link>
-                  <Link to={ROUTES.HOME}>{"شعبه مزار"}</Link>
-                  <Link to={ROUTES.HOME}>{"شعبه بامیان"}</Link>
+                  <Link to={ROUTES.BRANCH}>{"شعبه اکباتان"}</Link>
+                  <Link to={ROUTES.BRANCH}>{"شعبه چالوس"}</Link>
+                  <Link to={ROUTES.BRANCH}>{"شعبه اقدسیه"}</Link>
+                  <Link to={ROUTES.BRANCH}>{"شعبه ونک"}</Link>
                 </div>
               </div>
 

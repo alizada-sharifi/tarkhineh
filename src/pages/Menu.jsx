@@ -1,5 +1,5 @@
 import { Banner } from "../components/banner";
-import Category from "../components/menu/Category";
+
 import Item from "../components/menu/Item";
 
 function Menu() {
