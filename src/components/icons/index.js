@@ -22,3 +22,6 @@ export { default as FullStar } from "./FullStar";
 export { default as NotFound } from "./NotFound";
 export { default as LeftToggle } from "./LeftToggle";
 export { default as Trash } from "./Trash";
+export { default as TickSquare } from "./TickSquare";
+export { default as Wallet } from "./Wallet";
+export { default as Warning } from "./Warning";

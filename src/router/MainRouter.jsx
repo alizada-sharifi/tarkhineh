@@ -1,5 +1,13 @@
 import { MainLayout } from "../layouts";
-import { Branches, FoodDetail, Home, Menu, NotFound, Result } from "../pages";
+import {
+  Branches,
+  Cart,
+  FoodDetail,
+  Home,
+  Menu,
+  NotFound,
+  Result,
+} from "../pages";
 import ROUTES from "./routePath";
 
 const MainRouter = [
@@ -26,6 +34,10 @@ const MainRouter = [
       {
         path: ROUTES.FOODDETAIL,
         element: <FoodDetail />,
+      },
+      {
+        path: ROUTES.CART,
+        element: <Cart />,
       },
       {
         path: "*",
