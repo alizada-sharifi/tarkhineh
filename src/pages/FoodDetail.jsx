@@ -15,7 +15,7 @@ function FoodDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/foods?slug=${slug}`)
+      .get(`https://tarkhineh-api.onrender.com/foods?slug=${slug}`)
       .then((res) => setFoodData(res.data[0]));
   }, [slug]);
 

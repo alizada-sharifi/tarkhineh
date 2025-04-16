@@ -8,7 +8,7 @@ function Menu() {
   const [foods, setFoods] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/foods")
+      .get("https://tarkhineh-api.onrender.com/foods")
       .then((response) => setFoods(response.data));
   }, []);
 
