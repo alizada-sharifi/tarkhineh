@@ -8,21 +8,24 @@ import {
   Wallet,
   Warning,
   LeftArrow,
-} from "../../components/icons";
+} from "../components/icons";
 import { Dialog, DialogTitle, DialogPanel } from "@headlessui/react";
-import { Button } from "../../components/buttons";
+import { Button } from "../components/buttons";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clear } from "../../stores/cartSlice";
-import EmptyCart from "./EmptyCart";
-import { convertToFa } from "../../helper/functions";
-import CartItem from "../../components/cart/CartItem";
+import { clear } from "../stores/cartSlice";
+import EmptyCart from "../components/cart/EmptyCart";
+import { convertToFa } from "../helper/functions";
+import CartItem from "../components/cart/CartItem";
 
 function Cart() {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const cartState = useSelector((state) => state.cart);
   const { isLoggedIn } = useSelector((state) => state.auth);
+  function openModal() {
+    setIsOpen(true);
+  }
 
   return (
     <>
@@ -73,7 +76,7 @@ function Cart() {
 
       <div className="container mx-auto mt-6 px-5 min-h-[calc(100vh_-_239px)] md:mt-10">
         {/* ============ mobile header ============= */}
-        <div className="flex items-center justify-between md:hidden">
+        <div className="flex items-center justify-between md:hidden mb-4">
           <Link to="/">
             <RightArrow className={"fill-black size-5"} />
           </Link>
@@ -92,7 +95,7 @@ function Cart() {
           </button>
         </div>
         {/*  =================== desktop header ================ */}
-        <div className=" items-center justify-center hidden md:flex">
+        <div className=" items-center justify-center hidden md:flex mb-4">
           <div className="flex items-center gap-x-1 lg:gap-x-2 text-lg font-bold text-primary ">
             <ShoppingCart className={"size-8 fill-primary"} />
             <span>سبد خرید</span>
@@ -154,13 +157,15 @@ function Cart() {
                         onClick={() => {
                           if (cartState.itemsCounter > 0) openModal();
                         }}
-                        className={
-                          cartState.itemsCounter > 0
-                            ? "text-neutral-800"
-                            : "text-neutral-400"
-                        }
                       >
-                        <Trash className={"fill-neutral-800"} />
+                        <Trash
+                          className={
+                            cartState.itemsCounter > 0
+                              ? "fill-neutral-800"
+                              : "fill-neutral-400"
+                          }
+                          onClick={() => setIsOpen(true)}
+                        />
                       </button>
                     </div>
                     <div className="flex items-center justify-between py-3 border-y border-neutral-400 text-xs sm:text-sm">

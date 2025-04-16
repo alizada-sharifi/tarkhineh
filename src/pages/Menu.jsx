@@ -40,7 +40,7 @@ function Menu() {
       <Banner />
 
       {/* ===== Tabs group ===== */}
-      <div className="bg-neutral-300 py-4 text-neutral-700">
+      <div className="bg-neutral-300 py-4 text-neutral-700 mb-4">
         <div className="container flex items-center gap-4 md:gap-10">
           <button className="text-primary border-b-2 pb-2 border-primary font-medium text-sm md:text-xl md:font-bold">
             غذای اصلی

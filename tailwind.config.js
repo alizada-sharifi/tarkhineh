@@ -114,6 +114,7 @@ export default {
         chalos: "url('/src/assets/images/chalos.jpg')",
         aghdasieh: "url('/src/assets/images/aghdasieh.jpg')",
         vanak: "url('/src/assets/images/vanak.jpg')",
+        emptyPage: "url('/src/assets/images/empty-page.svg')",
       },
     },
   },
