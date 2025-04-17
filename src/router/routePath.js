@@ -5,15 +5,16 @@ const ROUTES = {
   ABOUT: "/about",
   CONTACT: "/contact",
   BRANCH: "/branches",
-  PRIVACY: "/privacy",
   MENU: "/menu",
   FOODDETAIL: "/menu/:slug",
-  FRANCHISE: "/franchise",
   CART: "/cart",
   COMPLETEINFO: "/completeInfo",
   PAYMENT: "/payment",
   SUCCESSFULPAYMENT: "/successfulPayment",
   CONTACT: "/contact",
+  FAQ: "/faq",
+  PRIVACY: "/privacy",
+  RULES: "/rules",
 };
 
 export default ROUTES;

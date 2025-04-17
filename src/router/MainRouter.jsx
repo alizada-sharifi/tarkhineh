@@ -5,6 +5,7 @@ import {
   Cart,
   CompleteInfo,
   Contact,
+  Faq,
   FoodDetail,
   Home,
   Menu,
@@ -63,6 +64,10 @@ const MainRouter = [
       {
         path: ROUTES.CONTACT,
         element: <Contact />,
+      },
+      {
+        path: ROUTES.FAQ,
+        element: <Faq />,
       },
       {
         path: "*",

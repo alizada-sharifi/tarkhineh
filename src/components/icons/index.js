@@ -38,3 +38,5 @@ export { default as Card } from "./Card";
 export { default as Card2 } from "./Card2";
 export { default as Discount } from "./Discount";
 export { default as Success } from "./Success";
+export { default as ArrowDown } from "./ArrowDown";
+export { default as ArrowUp } from "./ArrowUp";
