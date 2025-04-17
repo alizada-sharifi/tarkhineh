@@ -1,0 +1,1 @@
+export {default as PaymentFactor} from "./PaymentFactor"

@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import {
-  RightArrow,
   Trash,
   Close,
   ShoppingCart,
@@ -18,6 +16,7 @@ import EmptyCart from "../components/cart/EmptyCart";
 import { convertToFa } from "../helper/functions";
 import CartItem from "../components/cart/CartItem";
 import ROUTES from "../router/routePath";
+import MobileHeader from "../components/MobileHeader";
 
 function Cart() {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,25 +75,7 @@ function Cart() {
       {/* ========================= */}
 
       <div className="container mx-auto mt-6 px-5 min-h-[calc(100vh_-_239px)] md:mt-10">
-        {/* ============ mobile header ============= */}
-        <div className="flex items-center justify-between md:hidden mb-4">
-          <Link to="/">
-            <RightArrow className={"fill-black size-5"} />
-          </Link>
-
-          <span className="font-bold text-base text-neutral-800">سبد خرید</span>
-
-          <button
-            onClick={() => {
-              if (cartState.itemsCounter > 0) openModal();
-            }}
-            className={
-              cartState.itemsCounter > 0 ? "text-[#353535]" : "text-[#CBCBCB]"
-            }
-          >
-            <Trash className={"fill-neutral-400"} />
-          </button>
-        </div>
+        <MobileHeader title={"سبد خرید"} trash={true} />
         {/*  =================== desktop header ================ */}
         <div className=" items-center justify-center hidden md:flex mb-4">
           <div className="flex items-center gap-x-1 lg:gap-x-2 text-lg font-bold text-primary ">

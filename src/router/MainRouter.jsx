@@ -7,6 +7,7 @@ import {
   Home,
   Menu,
   NotFound,
+  Payment,
   Result,
 } from "../pages";
 import ROUTES from "./routePath";
@@ -43,6 +44,10 @@ const MainRouter = [
       {
         path: ROUTES.COMPLETEINFO,
         element: <CompleteInfo />,
+      },
+      {
+        path: ROUTES.PAYMENT,
+        element: <Payment />,
       },
       {
         path: "*",

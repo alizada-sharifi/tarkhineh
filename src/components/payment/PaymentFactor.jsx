@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { convertToFa } from "../../helper/functions";
-import { TickSquare, Trash, Warning, Close } from "../icons";
-import FactorItem from "./FactorItem";
+import { Trash, Close, Card2 } from "../icons";
+import FactorItem from "../completeInfo/FactorItem";
 import { Dialog, DialogTitle, DialogPanel } from "@headlessui/react";
 import { useState } from "react";
 import { Button } from "../buttons";
 import { clear } from "../../stores/cartSlice";
 import ROUTES from "../../router/routePath";
 
-function Factor({ shippingCost, list }) {
+function PaymentFactor({ method }) {
   const dispatch = useDispatch();
   const cartState = useSelector((state) => state.cart);
 
@@ -112,37 +112,25 @@ function Factor({ shippingCost, list }) {
               </div>
             </div>
 
-            <div className="border-b border-neutral-400 pb-3 flex  flex-col gap-y-2">
-              <div className="flex items-center justify-between text-xs sm:text-sm">
-                <span>هزینه ارسال</span>
-                <div className="flex items-center gap-x-1 text-neutral-700">
-                  {list.length ? (
-                    <span>{convertToFa(shippingCost)}</span>
-                  ) : (
-                    <span>۰</span>
-                  )}
-                  <span>تومان</span>
+            {method === "primary" ? (
+              <div className="border-b border-neutral-400 pb-3 flex  flex-col gap-y-2">
+                <div className="flex items-center justify-between text-xs sm:text-sm">
+                  <span>هزینه ارسال</span>
+                  <div className="flex">
+                    <span>{convertToFa(39000)}</span>
+                    <span>تومان</span>
+                  </div>
                 </div>
               </div>
-
-              {list.length ? (
-                ""
-              ) : (
-                <div className="flex items-start gap-x-2 text-warning text-[10px] sm:text-[11px] md:text-xs">
-                  <Warning />
-                  <p className="text-justify leading-5 font-medium">
-                    هزینه ارسال در ادامه بر اساس آدرس، زمان و نحوه ارسال انتخابی
-                    شما محاسبه و به این مبلغ اضافه خواهد شد.
-                  </p>
-                </div>
-              )}
-            </div>
+            ) : (
+              ""
+            )}
 
             <div className="flex items-center justify-between text-xs sm:text-sm md:text-lg md:my-2">
               <span>مبلغ قابل پرداخت</span>
               <div className="text-primary flex items-center gap-x-1 font-medium md:text-lg">
-                {list.length ? (
-                  <span>{convertToFa(cartState.total + shippingCost)}</span>
+                {method === "primary" ? (
+                  <span>{convertToFa(cartState.total + 39000)}</span>
                 ) : (
                   <span>{convertToFa(cartState.total)}</span>
                 )}
@@ -150,20 +138,17 @@ function Factor({ shippingCost, list }) {
               </div>
             </div>
 
-            {list.length ? (
-              <Button
-                className="flex items-center justify-center gap-x-2"
-                href={ROUTES.PAYMENT}
-              >
-                <TickSquare className={"fill-white"} />
-                <span>ثبت سفارش</span>
-              </Button>
-            ) : (
-              <Button className="flex items-center justify-center gap-x-2 bg-neutral-400 hover:cursor-not-allowed">
-                <TickSquare className={"fill-white"} />
-                <span>ثبت سفارش</span>
-              </Button>
-            )}
+            <Button
+              className="flex gap-2 items-center justify-center"
+              href={ROUTES.SUCCESSFULLPAYMENT}
+            >
+              <Card2 className={"fill-white"} />
+              {method === "primary" ? (
+                <span>تکمیل خرید</span>
+              ) : (
+                <span>تکمیل سفارش</span>
+              )}
+            </Button>
           </div>
         )}
       </div>
@@ -171,4 +156,4 @@ function Factor({ shippingCost, list }) {
   );
 }
 
-export default Factor;
+export default PaymentFactor;

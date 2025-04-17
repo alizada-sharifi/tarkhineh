@@ -11,6 +11,8 @@ const ROUTES = {
   FRANCHISE: "/franchise",
   CART: "/cart",
   COMPLETEINFO: "/completeInfo",
+  PAYMENT: "/payment",
+  SUCCESSFULLPAYMENT: "/successfullPayment",
 };
 
 export default ROUTES;

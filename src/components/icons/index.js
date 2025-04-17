@@ -33,3 +33,7 @@ export { default as Bag } from "./Bag";
 export { default as Location } from "./Location";
 export { default as Add } from "./Add";
 export { default as Edit } from "./Edit";
+export { default as WalletMoney } from "./WalletMoney";
+export { default as Card } from "./Card";
+export { default as Card2 } from "./Card2";
+export { default as Discount } from "./Discount";
