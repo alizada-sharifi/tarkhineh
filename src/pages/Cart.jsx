@@ -17,6 +17,7 @@ import { clear } from "../stores/cartSlice";
 import EmptyCart from "../components/cart/EmptyCart";
 import { convertToFa } from "../helper/functions";
 import CartItem from "../components/cart/CartItem";
+import ROUTES from "../router/routePath";
 
 function Cart() {
   const [isOpen, setIsOpen] = useState(false);
@@ -201,7 +202,10 @@ function Cart() {
                       </div>
                     </div>
 
-                    <Button className="flex items-center justify-center">
+                    <Button
+                      className="flex items-center justify-center"
+                      href={ROUTES.COMPLETEINFO}
+                    >
                       <span>تکمیل اطلاعات</span>
                       <LeftArrow className={"size-5"} />
                     </Button>

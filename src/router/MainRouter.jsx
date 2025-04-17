@@ -2,6 +2,7 @@ import { MainLayout } from "../layouts";
 import {
   Branches,
   Cart,
+  CompleteInfo,
   FoodDetail,
   Home,
   Menu,
@@ -38,6 +39,10 @@ const MainRouter = [
       {
         path: ROUTES.CART,
         element: <Cart />,
+      },
+      {
+        path: ROUTES.COMPLETEINFO,
+        element: <CompleteInfo />,
       },
       {
         path: "*",

@@ -10,6 +10,7 @@ const ROUTES = {
   FOODDETAIL: "/menu/:slug",
   FRANCHISE: "/franchise",
   CART: "/cart",
+  COMPLETEINFO: "/completeInfo",
 };
 
 export default ROUTES;
