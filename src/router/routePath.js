@@ -12,7 +12,7 @@ const ROUTES = {
   CART: "/cart",
   COMPLETEINFO: "/completeInfo",
   PAYMENT: "/payment",
-  SUCCESSFULLPAYMENT: "/successfullPayment",
+  SUCCESSFULPAYMENT: "/successfulPayment",
 };
 
 export default ROUTES;

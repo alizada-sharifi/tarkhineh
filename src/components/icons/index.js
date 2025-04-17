@@ -37,3 +37,4 @@ export { default as WalletMoney } from "./WalletMoney";
 export { default as Card } from "./Card";
 export { default as Card2 } from "./Card2";
 export { default as Discount } from "./Discount";
+export { default as Success } from "./Success";

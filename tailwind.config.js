@@ -115,6 +115,8 @@ export default {
         aghdasieh: "url('/src/assets/images/aghdasieh.jpg')",
         vanak: "url('/src/assets/images/vanak.jpg')",
         emptyPage: "url('/src/assets/images/empty-page.svg')",
+        successfulPayment:
+          "url('/src/assets/images/successful-payment-Background.svg')",
       },
     },
   },

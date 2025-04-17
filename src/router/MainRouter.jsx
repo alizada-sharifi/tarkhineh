@@ -9,6 +9,7 @@ import {
   NotFound,
   Payment,
   Result,
+  SuccessfulPayment,
 } from "../pages";
 import ROUTES from "./routePath";
 
@@ -48,6 +49,10 @@ const MainRouter = [
       {
         path: ROUTES.PAYMENT,
         element: <Payment />,
+      },
+      {
+        path: ROUTES.SUCCESSFULPAYMENT,
+        element: <SuccessfulPayment />,
       },
       {
         path: "*",
