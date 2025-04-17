@@ -117,6 +117,8 @@ export default {
         emptyPage: "url('/src/assets/images/empty-page.svg')",
         successfulPayment:
           "url('/src/assets/images/successful-payment-Background.svg')",
+        aboutBanner: "url('/src/assets/images/about-us-banner.png')",
+        aboutUs: "url('/src/assets/images/about-us.jpg')",
       },
     },
   },

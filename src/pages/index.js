@@ -8,3 +8,4 @@ export { default as NotFound } from "./NotFound";
 export { default as CompleteInfo } from "./CompleteInfo";
 export { default as Payment } from "./Payment";
 export { default as SuccessfulPayment } from "./SuccessfulPayment";
+export { default as About } from "./About";

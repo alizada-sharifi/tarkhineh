@@ -1,5 +1,6 @@
 import { MainLayout } from "../layouts";
 import {
+  About,
   Branches,
   Cart,
   CompleteInfo,
@@ -53,6 +54,10 @@ const MainRouter = [
       {
         path: ROUTES.SUCCESSFULPAYMENT,
         element: <SuccessfulPayment />,
+      },
+      {
+        path: ROUTES.ABOUT,
+        element: <About />,
       },
       {
         path: "*",
