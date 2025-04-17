@@ -5,7 +5,7 @@ import { ArrowDown, ArrowUp } from "../components/icons";
 function DisclosureItem({ title, desktopTitle, description }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="py-4">
+    <div className="py-4 border-b border-neutral-400">
       <div
         className="flex justify-between cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
