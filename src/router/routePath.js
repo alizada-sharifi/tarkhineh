@@ -13,6 +13,7 @@ const ROUTES = {
   COMPLETEINFO: "/completeInfo",
   PAYMENT: "/payment",
   SUCCESSFULPAYMENT: "/successfulPayment",
+  CONTACT: "/contact",
 };
 
 export default ROUTES;

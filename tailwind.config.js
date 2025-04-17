@@ -118,6 +118,7 @@ export default {
         successfulPayment:
           "url('/src/assets/images/successful-payment-Background.svg')",
         aboutBanner: "url('/src/assets/images/about-us-banner.png')",
+        contactBanner: "url('/src/assets/images/contactBanner.jpeg')",
         aboutUs: "url('/src/assets/images/about-us.jpg')",
       },
     },
