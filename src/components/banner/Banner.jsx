@@ -12,7 +12,7 @@ const Banner = () => {
       img: "bg-slider",
     },
     {
-      text: "!ظعم بی نظیر طبیعت",
+      text: "طعم بی نظیر طبیعت!",
       img: "bg-slider2",
     },
     {

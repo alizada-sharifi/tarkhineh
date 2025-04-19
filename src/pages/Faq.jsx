@@ -55,7 +55,7 @@ function Faq() {
 
       <div className="container border py-4 my-4 rounded-sm border-neutral-400">
         {faqItemsInfo.map((item) => {
-          return <DisclosureItem {...item} />;
+          return <DisclosureItem {...item} key={item.id} />;
         })}
       </div>
     </>

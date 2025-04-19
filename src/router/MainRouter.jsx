@@ -5,13 +5,17 @@ import {
   Cart,
   CompleteInfo,
   Contact,
+  Dashboard,
   Faq,
   FoodDetail,
   Home,
   Menu,
   NotFound,
   Payment,
+  Privacy,
+  Profile,
   Result,
+  Rules,
   SuccessfulPayment,
 } from "../pages";
 import ROUTES from "./routePath";
@@ -68,6 +72,22 @@ const MainRouter = [
       {
         path: ROUTES.FAQ,
         element: <Faq />,
+      },
+      {
+        path: ROUTES.RULES,
+        element: <Rules />,
+      },
+      {
+        path: ROUTES.PRIVACY,
+        element: <Privacy />,
+      },
+      {
+        path: ROUTES.DASHBOARD,
+        element: <Dashboard />,
+      },
+      {
+        path: ROUTES.PROFILE,
+        element: <Profile />,
       },
       {
         path: "*",

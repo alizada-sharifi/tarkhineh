@@ -15,6 +15,11 @@ const ROUTES = {
   FAQ: "/faq",
   PRIVACY: "/privacy",
   RULES: "/rules",
+  DASHBOARD: "/dashboard",
+  PROFILE: "/profile",
+  ORDERHISTORY: "/orderHistory",
+  FAVORITES: "/favorites",
+  ADDRESS: "/address",
 };
 
 export default ROUTES;

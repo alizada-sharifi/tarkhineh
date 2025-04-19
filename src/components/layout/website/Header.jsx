@@ -1,9 +1,12 @@
 import { NavLink, useNavigate } from "react-router";
-import { Logo, Search, ShoppingCart } from "../../icons";
+import { Logo, Search, ShoppingCart, User } from "../../icons";
 import ROUTES from "../../../router/routePath";
 import { cn } from "../../../helper/common";
 import MobileNavbar from "./MobileNavbar";
 import Login from "../../auth/Login";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { convertToFa } from "../../../helper/functions";
 
 function Header() {
   const navigate = useNavigate();
@@ -33,6 +36,17 @@ function Header() {
       text: "تماس با ما",
     },
   ];
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const cartState = useSelector((state) => state.cart);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   return (
     <header className="py-8 shadow">
@@ -69,11 +83,29 @@ function Header() {
             </button>
             <NavLink
               to="/cart"
-              className={({ isActive }) => (isActive ? "bg-primary" : "")}
+              className={({ isActive }) =>
+                isActive ? "bg-primary relative" : " relative"
+              }
             >
               <ShoppingCart />
+              {isLoggedIn && cartState.itemsCounter > 0 && (
+                <span className="absolute -top-1 -right-1.5 text-[10px] text-white bg-primary-600 rounded-full px-1  md:right-0.5 md:top-0.5 font-medium">
+                  {convertToFa(cartState.itemsCounter)}
+                </span>
+              )}
             </NavLink>
-            <Login />
+
+            <button
+              onClick={() => {
+                localStorage.getItem("email")
+                  ? navigate(ROUTES.DASHBOARD)
+                  : openModal();
+              }}
+            >
+              <User className={"size-6"} />
+            </button>
+
+            <Login isOpen={isOpen} closeModal={closeModal} />
           </div>
         </div>
       </div>

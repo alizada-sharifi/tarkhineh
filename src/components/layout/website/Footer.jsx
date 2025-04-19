@@ -15,7 +15,7 @@ function Footer() {
                 <p className="text-xl font-bold">{"دسترسی آسان"}</p>
                 <div className="flex flex-col gap-4 text-sm">
                   <Link to={ROUTES.FAQ}>{"پرسش‌ های متداول"}</Link>
-                  <Link to={ROUTES.TERMS}>{"قوانین ترخینه"}</Link>
+                  <Link to={ROUTES.RULES}>{"قوانین ترخینه"}</Link>
                   <Link to={ROUTES.PRIVACY}>{"حریم خصوصی"}</Link>
                   <div className="flex items-center gap-3">
                     <Link to={ROUTES.TELEGRAM}>

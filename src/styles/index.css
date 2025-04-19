@@ -9,3 +9,109 @@
     font-family: "estedad", sans-serif;
   }
 }
+/* ====================== custome styles ===================== */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #efefef;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #417f56;
+  border-radius: 10px;
+}
+
+.Toastify__toast-container {
+  width: fit-content !important;
+  position: fixed;
+  left: 0;
+  right: 0;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0.75em auto !important;
+}
+.Toastify__toast {
+  margin: 0 !important;
+}
+
+.Toastify__toast-body {
+  margin: 0 !important;
+  height: 30px !important;
+  padding-left: 2.5em !important;
+}
+.Toastify__toast {
+  min-height: 30px !important;
+  width: fit-content !important;
+  margin: 0 auto 0.5em auto !important;
+}
+
+.Toastify__toast--success,
+.Toastify__toast--error {
+  border-radius: 2em !important;
+  line-height: 0 !important;
+}
+
+.Toastify__progress-bar {
+  background-color: transparent !important;
+}
+
+.rmdp-shadow {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+}
+.datePickerInput {
+  width: 100%;
+  border: 1px solid #cbcbcb;
+  font-size: 14px;
+  color: #353535;
+  border-radius: 6px;
+  outline: none;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+}
+.datePickerInput::placeholder {
+  color: #717171;
+}
+.rmdp-calendar {
+  box-shadow: none !important;
+}
+.rmdp-header {
+  font-weight: 700 !important;
+  font-size: 16px !important;
+}
+.rmdp-header-values,
+.rmdp-day span {
+  color: #353535 !important;
+}
+
+.rmdp-day span:hover,
+.rmdp-today span {
+  background: #e5f2e9 !important;
+  color: #417f56 !important;
+  border-radius: 2em !important;
+  transition: all 0.3s;
+}
+.rmdp-selected span {
+  background: #417f56 !important;
+  color: white !important;
+  border-radius: 2em !important;
+  box-shadow: none !important;
+}
+.rmdp-arrow-container {
+  border: 1px solid #417f56 !important;
+  box-shadow: none !important;
+}
+.rmdp-arrow-container:hover {
+  background: white !important;
+}
+.rmdp-arrow {
+  border-color: #417f56 !important;
+}
+.rmdp-week-day {
+  color: #717171 !important;
+}

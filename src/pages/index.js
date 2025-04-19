@@ -11,3 +11,7 @@ export { default as SuccessfulPayment } from "./SuccessfulPayment";
 export { default as About } from "./About";
 export { default as Contact } from "./Contact";
 export { default as Faq } from "./Faq";
+export { default as Rules } from "./Rules";
+export { default as Privacy } from "./Privacy";
+export { default as Dashboard } from "./dashboard/Dashboard";
+export { default as Profile } from "./dashboard/Profile";

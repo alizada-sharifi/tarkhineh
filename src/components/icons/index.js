@@ -40,3 +40,4 @@ export { default as Discount } from "./Discount";
 export { default as Success } from "./Success";
 export { default as ArrowDown } from "./ArrowDown";
 export { default as ArrowUp } from "./ArrowUp";
+export { default as SignOut } from "./LogOut";

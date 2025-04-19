@@ -120,6 +120,8 @@ export default {
         aboutBanner: "url('/src/assets/images/about-us-banner.png')",
         contactBanner: "url('/src/assets/images/contactBanner.jpeg')",
         faqBanner: "url('/src/assets/images/faq-banner.jpg')",
+        rulesBanner: "url('/src/assets/images/rules-banner.jpg')",
+        privacyBanner: "url('/src/assets/images/privacy-banner.jpg')",
         aboutUs: "url('/src/assets/images/about-us.jpg')",
       },
     },
