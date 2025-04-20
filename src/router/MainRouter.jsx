@@ -7,6 +7,7 @@ import {
   Contact,
   Dashboard,
   Faq,
+  Favorites,
   FoodDetail,
   Home,
   Menu,
@@ -85,14 +86,6 @@ const MainRouter = [
       {
         path: ROUTES.DASHBOARD,
         element: <Dashboard />,
-      },
-      {
-        path: ROUTES.PROFILE,
-        element: <Profile />,
-      },
-      {
-        path: ROUTES.ORDERHISTORY,
-        element: <OrderHistory />,
       },
       {
         path: "*",

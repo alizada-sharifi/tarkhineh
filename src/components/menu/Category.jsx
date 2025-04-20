@@ -1,7 +1,8 @@
+import { cn } from "../../helper/common";
 import { createQueryObject } from "../../helper/functions";
 import { LeftArrow } from "../icons";
 
-const Category = ({ query, setQuery }) => {
+const Category = ({ query, setQuery, className }) => {
   const categoryHandler = (event) => {
     const { tagName } = event.target;
     const category = event.target.innerText;
@@ -19,7 +20,10 @@ const Category = ({ query, setQuery }) => {
 
   return (
     <ul
-      className="flex items-center text-[11px] font-medium px-5 gap-x-2 overflow-scroll overflow-y-hidden md:overflow-x-hidden relative text-[#353535] mb-3 md:text-xs md:mb-4"
+      className={cn(
+        "flex items-center text-[11px] font-medium px-5 gap-x-2 overflow-scroll overflow-y-hidden md:overflow-x-hidden relative text-[#353535] mb-3 md:text-xs md:mb-4",
+        className
+      )}
       onClick={categoryHandler}
     >
       {categories.map((item) => (

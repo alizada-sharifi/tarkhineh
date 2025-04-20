@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { createQueryObject } from "../../helper/functions";
 import { Search } from "../icons";
+import { cn } from "../../helper/common";
 
-function SearchProduct({ query, setQuery }) {
+function SearchProduct({ query, setQuery, className }) {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -14,7 +15,10 @@ function SearchProduct({ query, setQuery }) {
   };
   return (
     <form
-      className="flex items-center justify-between px-4 h-9 border border-neutral-400 rounded-md mb-6 md:relative md:top-1 lg:w-[400px] xl:w-[490px] lg:h-10 lg:rounded-lg"
+      className={cn(
+        "flex items-center justify-between px-4 h-9 border border-neutral-400 rounded-md mb-6 md:relative md:top-1 lg:w-[400px] xl:w-[490px] lg:h-10 lg:rounded-lg",
+        className
+      )}
       onSubmit={searchHandler}
     >
       <input

@@ -56,7 +56,7 @@ function Menu() {
       </div>
 
       {/* ===== Category & Search Box ===== */}
-      <div className="container max-w-[1224px] mx-auto flex flex-col md:flex-row lg:mt-3.5 lg:mb-3.5 md:justify-between">
+      <div className="container mx-auto flex flex-col md:flex-row lg:mt-3.5 lg:mb-3.5 md:justify-between">
         <Category query={query} setQuery={setQuery} />
         <div className="px-5">
           <SearchProduct query={query} setQuery={setQuery} />
