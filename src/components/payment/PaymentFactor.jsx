@@ -5,7 +5,7 @@ import FactorItem from "../completeInfo/FactorItem";
 import { Dialog, DialogTitle, DialogPanel } from "@headlessui/react";
 import { useState } from "react";
 import { Button } from "../buttons";
-import { clear } from "../../stores/cartSlice";
+import { clear, checkout } from "../../stores/cartSlice";
 import ROUTES from "../../router/routePath";
 
 function PaymentFactor({ method }) {
@@ -140,7 +140,10 @@ function PaymentFactor({ method }) {
 
             <Button
               className="flex gap-2 items-center justify-center"
-              href={ROUTES.SUCCESSFULLPAYMENT}
+              href={ROUTES.SUCCESSFULPAYMENT}
+              onClick={() => {
+                dispatch(checkout(cartState));
+              }}
             >
               <Card2 className={"fill-white"} />
               {method === "primary" ? (

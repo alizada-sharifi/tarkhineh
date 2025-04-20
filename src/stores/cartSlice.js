@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { sumDiscount, sumPrice, sumQuantity } from "../helper/functions";
+
 const initialState = {
   selectedItems: [],
   itemsCounter: 0,
   total: 0,
+  discount: 0,
   checkout: false,
   purchaseHistory: [],
 };
@@ -23,33 +25,29 @@ const cartSlice = createSlice({
     },
 
     removeItem: (state, action) => {
-      const newSelectedItems = state.selectedItems.filter(
+      state.selectedItems = state.selectedItems.filter(
         (item) => item.id !== action.payload.id
       );
-
-      state.selectedItems = newSelectedItems;
       state.total = sumPrice(state.selectedItems);
       state.discount = sumDiscount(state.selectedItems);
       state.itemsCounter = sumQuantity(state.selectedItems);
     },
 
     increase: (state, action) => {
-      const increaseIndex = state.selectedItems.findIndex(
+      const itemIndex = state.selectedItems.findIndex(
         (item) => item.id === action.payload.id
       );
-
-      state.selectedItems[increaseIndex].quantity++;
+      state.selectedItems[itemIndex].quantity++;
       state.total = sumPrice(state.selectedItems);
       state.discount = sumDiscount(state.selectedItems);
       state.itemsCounter = sumQuantity(state.selectedItems);
     },
 
     decrease: (state, action) => {
-      const decreaseIndex = state.selectedItems.findIndex(
+      const itemIndex = state.selectedItems.findIndex(
         (item) => item.id === action.payload.id
       );
-
-      state.selectedItems[decreaseIndex].quantity--;
+      state.selectedItems[itemIndex].quantity--;
       state.total = sumPrice(state.selectedItems);
       state.discount = sumDiscount(state.selectedItems);
       state.itemsCounter = sumQuantity(state.selectedItems);
@@ -59,12 +57,14 @@ const cartSlice = createSlice({
       const newPurchase = {
         items: state.selectedItems,
         total: state.total,
-        date: new Date().toDateString,
+        date: new Date().toISOString(), // ✅ تاریخ معتبر
       };
-      state.purchaseHistory = [...state.purchaseHistory, newPurchase];
+
+      state.purchaseHistory.push(newPurchase);
       state.selectedItems = [];
       state.itemsCounter = 0;
       state.total = 0;
+      state.discount = 0;
       state.checkout = true;
     },
 
@@ -72,6 +72,7 @@ const cartSlice = createSlice({
       state.selectedItems = [];
       state.itemsCounter = 0;
       state.total = 0;
+      state.discount = 0;
       state.checkout = false;
       state.purchaseHistory = [];
     },

@@ -11,6 +11,7 @@ import {
   Home,
   Menu,
   NotFound,
+  OrderHistory,
   Payment,
   Privacy,
   Profile,
@@ -88,6 +89,10 @@ const MainRouter = [
       {
         path: ROUTES.PROFILE,
         element: <Profile />,
+      },
+      {
+        path: ROUTES.ORDERHISTORY,
+        element: <OrderHistory />,
       },
       {
         path: "*",

@@ -15,3 +15,4 @@ export { default as Rules } from "./Rules";
 export { default as Privacy } from "./Privacy";
 export { default as Dashboard } from "./dashboard/Dashboard";
 export { default as Profile } from "./dashboard/Profile";
+export { default as OrderHistory } from "./dashboard/OrderHistory";
