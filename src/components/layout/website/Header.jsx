@@ -97,7 +97,7 @@ function Header() {
 
             <button
               onClick={() => {
-                localStorage.getItem("email")
+                localStorage.getItem("phoneNumber")
                   ? navigate(ROUTES.DASHBOARD)
                   : openModal();
               }}

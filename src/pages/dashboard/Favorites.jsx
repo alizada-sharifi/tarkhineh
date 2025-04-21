@@ -11,9 +11,16 @@ function Favorites() {
   const [displayed, setDisplayed] = useState([]);
   const { selectedItems } = useSelector((state) => state.favorite);
   const [query, setQuery] = useState({});
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
+    // تنظیم مقدار اولیه از URL
+    const initialQuery = Object.fromEntries([...searchParams]);
+    setQuery(initialQuery);
+  }, [searchParams]);
+
+  useEffect(() => {
+    // اعمال فیلتر براساس جستجو
     if (query.search) {
       const filtered = selectedItems.filter((item) =>
         item.title.toLowerCase().includes(query.search.toLowerCase())
@@ -23,12 +30,6 @@ function Favorites() {
       setDisplayed(selectedItems);
     }
   }, [query, selectedItems]);
-
-  useEffect(() => {
-    setDisplayed(query);
-    const initialQuery = Object.fromEntries([...searchParams]);
-    setQuery(initialQuery);
-  }, [query]);
 
   return (
     <DashboardLayout title={"علاقمندی‌ها"}>

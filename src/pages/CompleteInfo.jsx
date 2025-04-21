@@ -76,7 +76,7 @@ function CompleteInfo() {
                 <Location />
                 <span>آدرس ها</span>
               </div>
-
+              
               <Address
                 list={list}
                 setList={setList}

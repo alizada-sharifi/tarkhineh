@@ -1,4 +1,4 @@
-import { Address, Favorites, OrderHistory, Profile } from "../pages";
+import { Addresses, Favorites, OrderHistory, Profile } from "../pages";
 import ROUTES from "./routePath";
 
 const DashboardRouter = [
@@ -16,7 +16,7 @@ const DashboardRouter = [
   },
   {
     path: ROUTES.ADDRESS,
-    element: <Address />,
+    element: <Addresses />,
   },
 ];
 

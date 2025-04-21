@@ -18,7 +18,7 @@ function DashboardLayout({ title, children, header }) {
           <Sidbar className={"hidden lg:block w-1/4 "} />
 
           <div className="lg:border border-neutral-400 p-4 flex-1 rounded-lg mb-8 w-3/4 relative ">
-            <div className="relative flex items-center justify-between border-b-2 border-r-neutral-400">
+            <div className="relative flex items-center justify-between border-b-2 border-r-neutral-400 mb-4">
               <h3 className="font-semibold mb-4 text-xl text-neutral-800  pb-3 hidden md:block">
                 {title}
               </h3>

@@ -20,7 +20,7 @@ const ROUTES = {
   PROFILE: "/profile",
   ORDERHISTORY: "/orderHistory",
   FAVORITES: "/favorites",
-  ADDRESS: "/address",
+  ADDRESS: "/addresses",
 };
 
 export default ROUTES;

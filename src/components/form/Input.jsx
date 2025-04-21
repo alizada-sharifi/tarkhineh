@@ -7,6 +7,8 @@ function Input({
   type = "text",
   className = "",
   wrapperClassName = "",
+  value,
+  ...props
 }) {
   const {
     register,
@@ -16,6 +18,7 @@ function Input({
   return (
     <div className={cn("space-y-1", wrapperClassName)}>
       <input
+        value={value}
         {...register(name)}
         type={type}
         placeholder={placeholder}
@@ -26,6 +29,7 @@ function Input({
             "border-error focus:border-error": errors[name],
           }
         )}
+        {...props}
       />
       {errors[name] && (
         <p className="text-xs text-error">{errors[name].message}</p>

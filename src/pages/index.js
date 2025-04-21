@@ -18,4 +18,4 @@ export { default as Dashboard } from "./dashboard/Dashboard";
 export { default as Profile } from "./dashboard/Profile";
 export { default as OrderHistory } from "./dashboard/OrderHistory";
 export { default as Favorites } from "./dashboard/Favorites";
-export { default as Address } from "./dashboard/Address";
+export { default as Addresses } from "./dashboard/Addresses";

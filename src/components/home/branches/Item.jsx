@@ -6,7 +6,10 @@ import ROUTES from "../../../router/routePath";
 function Item({ title, address, image }) {
   const navigate = useNavigate();
   return (
-    <div className=" group flex items-center gap-x-2 border  border-neutral-400  hover:shadow-card duration-500 rounded-lg overflow-hidden mb-3 md:flex-col md:gap-y-2 md:w-72">
+    <div
+      onClick={() => navigate(ROUTES.BRANCH)}
+      className=" group flex items-center gap-x-2 border  border-neutral-400  hover:shadow-card duration-500 rounded-lg overflow-hidden mb-3 md:flex-col md:gap-y-2 md:w-72"
+    >
       <div
         className={`${image} bg-cover bg-center w-36 h-20 md:w-72 md:h-36 lg:h-56 relative`}
       >

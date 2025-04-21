@@ -7,6 +7,8 @@ function Textarea({
   type = "text",
   className = "",
   wrapperClassName = "",
+  onChange,
+  value,
 }) {
   const {
     register,
@@ -26,6 +28,8 @@ function Textarea({
             "border-error focus:border-error": errors[name],
           }
         )}
+        onChange={onChange}
+        value={value}
       ></textarea>
       {errors[name] && (
         <p className="text-xs text-error">{errors[name].message}</p>

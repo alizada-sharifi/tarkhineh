@@ -55,7 +55,7 @@ function Sidbar({ className }) {
             <span>{localStorage.getItem("familyName")}</span>
           </p>
           <p className="text-neutral-700 text-xs md:text-sm text-right">
-            {localStorage.getItem("email")}
+            {localStorage.getItem("phoneNumber")}
           </p>
         </div>
       </div>

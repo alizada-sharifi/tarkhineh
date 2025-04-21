@@ -18,7 +18,7 @@ function Login({ isOpen, closeModal }) {
 
   const onSubmit = (data) => {
     console.log("data", data);
-    localStorage.setItem("email", data.email);
+    localStorage.setItem("phoneNumber", data.phoneNumber);
     localStorage.setItem("name", data.name);
     localStorage.setItem("familyName", data.familyName);
     dispatch(setLoginStatus(true));
@@ -57,7 +57,12 @@ function Login({ isOpen, closeModal }) {
               <div className="px-4 space-y-5 py-4">
                 <Input name="name" placeholder="نام" />
                 <Input name="familyName" placeholder="نام خانوادگی" />
-                <Input name="email" placeholder="ایمیل آدرس" />
+                <Input
+                  name="phoneNumber"
+                  placeholder="شماره همراه"
+                  type="tel"
+                  dir="rtl"
+                />
 
                 <Button className="w-full" type="submit">
                   {isLoading ? (
