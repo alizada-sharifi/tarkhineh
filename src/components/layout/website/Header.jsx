@@ -24,7 +24,7 @@ function Header() {
       text: "منو",
     },
     {
-      href: ROUTES.FRANCHISE,
+      href: ROUTES.FRANCHIESE,
       text: "اعطای نمایندگی",
     },
     {

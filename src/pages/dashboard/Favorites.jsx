@@ -2,10 +2,10 @@ import Category from "../../components/menu/Category";
 import SearchProduct from "../../components/menu/SearchProduct";
 import { DashboardLayout } from "../../layouts";
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Item from "../../components/favorites/Item";
 import { NotFound } from "../../components/icons";
+import { useSearchParams } from "react-router";
 
 function Favorites() {
   const [displayed, setDisplayed] = useState([]);
@@ -13,7 +13,6 @@ function Favorites() {
   const [query, setQuery] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // اعمال فیلتر سرچ در صورت وجود
   useEffect(() => {
     if (query.search) {
       const filtered = selectedItems.filter((item) =>
@@ -24,6 +23,12 @@ function Favorites() {
       setDisplayed(selectedItems);
     }
   }, [query, selectedItems]);
+
+  useEffect(() => {
+    setDisplayed(query);
+    const initialQuery = Object.fromEntries([...searchParams]);
+    setQuery(initialQuery);
+  }, [query]);
 
   return (
     <DashboardLayout title={"علاقمندی‌ها"}>

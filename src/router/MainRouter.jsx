@@ -7,15 +7,13 @@ import {
   Contact,
   Dashboard,
   Faq,
-  Favorites,
   FoodDetail,
+  Franchise,
   Home,
   Menu,
   NotFound,
-  OrderHistory,
   Payment,
   Privacy,
-  Profile,
   Result,
   Rules,
   SuccessfulPayment,
@@ -86,6 +84,10 @@ const MainRouter = [
       {
         path: ROUTES.DASHBOARD,
         element: <Dashboard />,
+      },
+      {
+        path: ROUTES.FRANCHIESE,
+        element: <Franchise />,
       },
       {
         path: "*",

@@ -14,6 +14,7 @@ const ROUTES = {
   CONTACT: "/contact",
   FAQ: "/faq",
   PRIVACY: "/privacy",
+  FRANCHIESE: "/franchise",
   RULES: "/rules",
   DASHBOARD: "/dashboard",
   PROFILE: "/profile",

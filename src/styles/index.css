@@ -46,7 +46,7 @@
   padding-left: 2.5em !important;
 }
 .Toastify__toast {
-  min-height: 30px !important;
+  min-height: 40px !important;
   width: fit-content !important;
   margin: 0 auto 0.5em auto !important;
 }
@@ -114,4 +114,26 @@
 }
 .rmdp-week-day {
   color: #717171 !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .Toastify__toast-container {
+    font-size: 15px !important;
+    position: fixed !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin: 1em auto !important;
+    transform: translateX(50%) !important;
+  }
+
+  .Toastify__toast-body {
+    padding-left: 0em !important;
+    height: 40px !important;
+  }
+
+  .Toastify__toast {
+    width: 270px !important;
+    min-height: 40px !important;
+    margin-bottom: 1em !important;
+  }
 }

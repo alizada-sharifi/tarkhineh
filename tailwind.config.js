@@ -122,6 +122,7 @@ export default {
         faqBanner: "url('/src/assets/images/faq-banner.jpg')",
         rulesBanner: "url('/src/assets/images/rules-banner.jpg')",
         privacyBanner: "url('/src/assets/images/privacy-banner.jpg')",
+        franchiseBanner: "url('/src/assets/images/franchiseBanner.jpeg')",
         aboutUs: "url('/src/assets/images/about-us.jpg')",
       },
     },
