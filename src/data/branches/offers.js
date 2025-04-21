@@ -4,8 +4,11 @@ export const offers = [
     title: "کوفته برنجی",
     price: 180000,
     offer: 35,
-    discountedPrice: 1450000,
+    discountedPrice: 117000,
+    category: "غذاهای ایرانی",
+    description: "برنج سبزی کوفته لپه آرد نخودچی، گردو و زرشک و آلو پیاز",
     image: "https://i.ibb.co/bgt19JXH/kofteh.jpg",
+    slug: "کوفته-برنجی",
   },
   {
     id: 2,
@@ -16,6 +19,7 @@ export const offers = [
     category: "غذاهای ایرانی",
     description: "بادمجان، کشک، نعناع خشک، مغز گردو، سیر، پیاز",
     image: "https://i.ibb.co/YTj9C6Cm/kash-Bademjan.jpg",
+    slug: "کشک-بادمجان",
   },
   {
     id: 3,
@@ -26,6 +30,7 @@ export const offers = [
     category: "غذاهای ایرانی",
     description: "بادمجان، گوجه فرنگی، تخم مرغ، سیر، رب گوجه فرنگی",
     image: "https://i.ibb.co/PvTfThH7/mirza.png",
+    slug: "میرزا-قاسمی",
   },
   {
     id: 4,
@@ -36,6 +41,7 @@ export const offers = [
     category: "غذاهای ایرانی",
     description: "پاچ باقلا، شوید خشک، کره، سیر، تخم مرغ",
     image: "https://i.ibb.co/fzMnrDvH/baghali.jpg",
+    slug: "باقلاقاتوق",
   },
   {
     id: 5,
@@ -45,8 +51,8 @@ export const offers = [
     discountedPrice: 81000,
     category: "غذاهای ایرانی",
     description: "نخود، پیاز، تخم گشنیز، سیر، جعفری، سیب زمینی",
-
     image: "https://i.ibb.co/G3GRB9qs/flafil.jpg",
+    slug: "فلافل",
   },
   {
     id: 6,
@@ -57,5 +63,6 @@ export const offers = [
     category: "غذاهای ایرانی",
     description: "کشک، گردو، پیاز، نعناع خشک",
     image: "https://i.ibb.co/HLLQKNy0/kalaJosh.jpg",
+    slug: "کله-جوش",
   },
 ];

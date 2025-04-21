@@ -5,7 +5,10 @@ export const nonIrani = [
     price: 175000,
     offer: 20,
     discountedPrice: 140000,
+    category: "غذاهای غیر ایرانی",
+    description: "پاستا، قارچ، گوجه، کدوی خوردشده، پیاز خلالی‌شده",
     image: "https://i.ibb.co/bg5RzC1m/pasta-Sabzi.jpg",
+    slug: "پاستا-سبزیجات",
   },
   {
     id: 14,
@@ -13,7 +16,11 @@ export const nonIrani = [
     price: 170000,
     offer: 12,
     discountedPrice: 149600,
+    category: "غذاهای غیر ایرانی",
+    description:
+      "اسپاگتی، گوشت چرخ کرده، هویج، ساقه کرفس، گوجه فرنگی، سیر، پیاز، پنیر پارمزان، روغن زیتون",
     image: "https://i.ibb.co/chNcgdCZ/pasta-Blonz.jpg",
+    slug: "پاستا-بلونز",
   },
   {
     id: 15,
@@ -21,7 +28,11 @@ export const nonIrani = [
     price: 180000,
     offer: 45,
     discountedPrice: 99000,
+    category: "غذاهای غیر ایرانی",
+    description:
+      "بادمجان، گوجه فرنگی، کدو سبز، پیاز، رب گوجه فرنگی، روغن زیتون، پنیر پارمزان",
     image: "https://i.ibb.co/nN0FbPkt/ratatoei.jpg",
+    slug: "راتاتویی",
   },
   {
     id: 16,
@@ -29,7 +40,11 @@ export const nonIrani = [
     price: 170000,
     offer: 15,
     discountedPrice: 144500,
+    category: "غذاهای غیر ایرانی",
+    description:
+      "لازانیا، قارچ، ریحان تازه، جعفری تازه، گوجه فرنگی، پنیر پیتزا، بادمجان",
     image: "https://i.ibb.co/4Zt20w9h/lazania.jpg",
+    slug: "لازانیا",
   },
   {
     id: 17,
@@ -37,7 +52,11 @@ export const nonIrani = [
     price: 100000,
     offer: 15,
     discountedPrice: 85000,
+    category: "غذاهای غیر ایرانی",
+    description:
+      "جلبک دریایی/ نوری، برنج کته، سرکه سفید (یا سرکه برنج)، شکر، نمک دریا",
     image: "https://i.ibb.co/MxCyX66v/soshi.jpg",
+    slug: "سوشی",
   },
   {
     id: 18,
@@ -45,7 +64,10 @@ export const nonIrani = [
     price: 125000,
     offer: 8,
     discountedPrice: 115000,
+    category: "غذاهای غیر ایرانی",
+    description: "گرام ماسالا، پودر کاری، سیر له شده، ،گشنیز خرد شده",
     image: "https://i.ibb.co/HDD6Myxt/pakawra.jpg",
+    slug: "پاکورا-سبزیجات",
   },
   {
     id: 19,
@@ -53,7 +75,11 @@ export const nonIrani = [
     price: 190000,
     offer: 17,
     discountedPrice: 157700,
+    category: "غذاهای غیر ایرانی",
+    description:
+      "اسفناج، قارچ، پنیر موزارلا یا پنیر پیتزا، پنیر ریکوتا یا پنیر خامه ای، پیاز، سیر، روغن زیتون",
     image: "https://i.ibb.co/bTggZZ2/kalzoneh.jpg",
+    slug: "کالزونه-اسفناج",
   },
   {
     id: 20,
@@ -61,6 +87,9 @@ export const nonIrani = [
     price: 200000,
     offer: 15,
     discountedPrice: 170000,
+    category: "غذاهای غیر ایرانی",
+    description: "پنیر، اسفناج، گوجه، پیاز، سیر",
     image: "https://i.ibb.co/Kp7Ly7r3/palak.jpg",
+    slug: "پالاک-پنیر",
   },
 ];
