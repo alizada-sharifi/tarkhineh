@@ -8,6 +8,32 @@ import ROUTES from "../../../router/routePath";
 
 function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navlinkList = [
+    {
+      href: ROUTES.HOME,
+      text: "صفحه اصلی",
+    },
+    {
+      href: ROUTES.BRANCH,
+      text: "شعبات",
+    },
+    {
+      href: ROUTES.MENU,
+      text: "منو",
+    },
+    {
+      href: ROUTES.FRANCHIESE,
+      text: "اعطای نمایندگی",
+    },
+    {
+      href: ROUTES.ABOUT,
+      text: "درباره ما",
+    },
+    {
+      href: ROUTES.CONTACT,
+      text: "تماس با ما",
+    },
+  ];
   return (
     <>
       <button className="block lg:hidden" onClick={() => setIsOpen(true)}>
@@ -44,56 +70,20 @@ function MobileNavbar() {
             </div>
           </div>
           <nav className="flex flex-col [&>*]:py-2 p-4 divide-y ">
-            <NavLink
-              to={ROUTES.HOME}
-              className={({ isActive }) =>
-                cn("text-sm !pt-0", {
-                  "text-primary": isActive,
-                })
-              }
-            >
-              {"صفحه اصلی"}
-            </NavLink>
-            <NavLink
-              to={ROUTES.BRANCH}
-              className={({ isActive }) =>
-                cn("text-sm", {
-                  "text-primary": isActive,
-                })
-              }
-            >
-              {"شعبات"}
-            </NavLink>
-            <NavLink
-              to={ROUTES.MENU}
-              className={({ isActive }) =>
-                cn("text-sm", {
-                  "text-primary": isActive,
-                })
-              }
-            >
-              {"منو"}
-            </NavLink>
-            <NavLink
-              to={ROUTES.ABOUT}
-              className={({ isActive }) =>
-                cn("text-sm", {
-                  "text-primary": isActive,
-                })
-              }
-            >
-              {"درباره ما"}
-            </NavLink>
-            <NavLink
-              to={ROUTES.CONTACT}
-              className={({ isActive }) =>
-                cn("text-sm", {
-                  "text-primary": isActive,
-                })
-              }
-            >
-              {" تماس با ما"}
-            </NavLink>
+            {navlinkList.map((item, index) => (
+              <NavLink
+                key={index}
+                to={item.href}
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  cn("text-sm !pt-0", {
+                    "text-primary": isActive,
+                  })
+                }
+              >
+                {item.text}
+              </NavLink>
+            ))}
           </nav>
         </div>
       </div>
