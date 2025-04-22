@@ -9,12 +9,14 @@ function Addresses() {
   const updateShippingCost = (newCost) => {
     setShippingCost(newCost);
   };
+
   return (
     <DashboardLayout title={"آدرس ها"}>
       <Address
         list={list}
         setList={setList}
         updateShippingCost={updateShippingCost}
+        className={"-top-10 md:top-4"}
       />
     </DashboardLayout>
   );

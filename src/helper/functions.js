@@ -85,8 +85,7 @@ const createQueryObject = (currentQuery, newQuery) => {
 };
 
 const isInCart = (state, id) => {
-  if (!state || !Array.isArray(state.selectedItems)) return false;
-  return !!state.selectedItems.find((item) => item.id === id);
+  return state?.selectedItems?.some((item) => item.id === id) || false;
 };
 
 const isInFavorite = (state, id) => {

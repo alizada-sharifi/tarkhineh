@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../../buttons";
 import ROUTES from "../../../router/routePath";
 

@@ -144,14 +144,14 @@ function RequestForm() {
                 </h3>
 
                 <div
-                  className="border rounded-md p-8 text-center cursor-pointer hover:border-gray-400 transition w-full min-h-[200px] flex items-center justify-center"
+                  className="border rounded-md  text-center cursor-pointer hover:border-gray-400 transition w-full min-h-[200px] flex items-center justify-center"
                   onClick={handleClick}
                 >
                   <input
                     type="file"
                     accept="image/*"
                     ref={fileInputRef}
-                    className="hidden"
+                    className="hidden w-full"
                     onChange={handleFileChange}
                   />
 

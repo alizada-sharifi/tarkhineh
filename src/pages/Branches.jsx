@@ -3,9 +3,6 @@ import { Banner } from "../components/banner";
 import { Container } from "../components/branches";
 import { Button } from "../components/buttons";
 import { Note } from "../components/icons";
-import { nonIrani } from "../data/branches/nonIrani";
-import { offers } from "../data/branches/offers";
-import { popular } from "../data/branches/popularFood";
 import ROUTES from "../router/routePath";
 import { Testmonial } from "../components/branches/testmonial";
 import { SearchInput } from "../components/form";
@@ -19,15 +16,15 @@ function Branches() {
         <SearchInput />
       </div>
 
-      <Container data={offers} id={"offers"} title={"غذاهای محبوب"} />
+      <Container index={[0, 6]} id={"offers"} title={"پیشنهاد ویژه"} />
       <Container
-        data={popular}
+        index={[7, 12]}
         id={"popular"}
         className={"bg-primary"}
         titleClassName={"text-white"}
         title={"غذاهای محبوب"}
       />
-      <Container data={nonIrani} id={"nonIrani"} title={"غذاهای غیر ایرانی"} />
+      <Container index={[12, 20]} id={"nonIrani"} title={"غذاهای غیر ایرانی"} />
 
       <div className="text-center pb-8">
         <Button

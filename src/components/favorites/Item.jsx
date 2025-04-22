@@ -29,7 +29,11 @@ function Item({ productData }) {
   return (
     <div className="flex flex-col gap-y-1 border border-neutral-400 rounded-md md:rounded-lg overflow-hidden">
       <Link to={`/menu/${slug}`}>
-        <img src={image} alt={title} className="w-full rounded h-28 md:h-36" />
+        <img
+          src={image}
+          alt={title}
+          className="w-full rounded h-28 md:h-36 object-cover"
+        />
       </Link>
 
       <div className="flex flex-col flex-1 justify-between gap-y-1 p-2 text-neutral-800 ">

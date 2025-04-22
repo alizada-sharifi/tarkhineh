@@ -42,14 +42,28 @@ function Menu() {
       {/* ===== Tabs group ===== */}
       <div className="bg-neutral-300 py-4 text-neutral-700 mb-4">
         <div className="container flex items-center gap-4 md:gap-10">
-          <button className="text-primary border-b-2 pb-2 border-primary font-medium text-sm md:text-xl md:font-bold">
+          <button
+            className="text-primary border-b-2 pb-2 border-primary font-medium text-sm md:text-xl md:font-bold"
+            onClick={() => setQuery({ ...query, category: "main-dish" })}
+          >
             غذای اصلی
           </button>
-          <button className="pb-2 font-medium text-sm md:text-xl">
+          <button
+            className="pb-2 font-medium text-sm md:text-xl"
+            onClick={() => setQuery({ ...query, category: "starter" })}
+          >
             پیش غذا
           </button>
-          <button className="pb-2 font-medium text-sm md:text-xl">دسر</button>
-          <button className="pb-2 font-medium text-sm md:text-xl">
+          <button
+            className="pb-2 font-medium text-sm md:text-xl"
+            onClick={() => setQuery({ ...query, category: "dessert" })}
+          >
+            دسر
+          </button>
+          <button
+            className="pb-2 font-medium text-sm md:text-xl"
+            onClick={() => setQuery({ ...query, category: "drink" })}
+          >
             نوشیدنی
           </button>
         </div>
@@ -86,7 +100,6 @@ function Menu() {
       )}
 
       {/* ===== Products Grid ===== */}
-
       <div className="container grid lg:grid-cols-2 gap-8 py-6">
         {displayed?.map((product) => (
           <Item {...product} key={product.id} />

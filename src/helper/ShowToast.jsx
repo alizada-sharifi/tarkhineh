@@ -3,12 +3,13 @@ import { Close } from "../components/icons";
 
 const ShowToast = (message, type = "success") => {
   const CloseButton = ({ closeToast }) => (
-    <i
-      className="absolute top-[11px] md:top-4 left-2.5 md:left-3 scale-90 md:scale-100"
+    <button
+      className="absolute top-[11px] md:top-4 left-2.5 md:left-3 scale-90
+      md:scale-100"
       onClick={closeToast}
     >
-      <Close />
-    </i>
+      <Close className={"fill-white"} />
+    </button>
   );
   const config = {
     position: "top-center",

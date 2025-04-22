@@ -22,7 +22,7 @@ function Cart() {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const cartState = useSelector((state) => state.cart);
-  const { isLoggedIn } = useSelector((state) => state.auth);
+  const isLoggedIn = useSelector((state) => state.auth);
   function openModal() {
     setIsOpen(true);
   }

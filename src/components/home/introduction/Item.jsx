@@ -1,5 +1,3 @@
-import React from "react";
-
 function Item({ icon: Icon, text }) {
   return (
     <div className="flex flex-col items-center justify-center gap-4">

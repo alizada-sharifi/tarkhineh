@@ -1,4 +1,3 @@
-
 import Sidbar from "../../components/Sidbar";
 
 function Dashboard() {

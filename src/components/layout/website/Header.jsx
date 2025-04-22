@@ -36,7 +36,7 @@ function Header() {
       text: "تماس با ما",
     },
   ];
-  const { isLoggedIn } = useSelector((state) => state.auth);
+  const isLoggedIn = useSelector((state) => state.auth);
   const cartState = useSelector((state) => state.cart);
 
   const [isOpen, setIsOpen] = useState(false);

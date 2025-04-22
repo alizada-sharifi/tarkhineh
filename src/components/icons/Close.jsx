@@ -1,4 +1,3 @@
-// import {cn} from '../../helpers/common';
 import { cn } from "../../helper/common";
 
 function Close({ className, ...props }) {

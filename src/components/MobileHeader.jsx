@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 import { RightArrow, Trash } from "./icons";
 import { cn } from "../helper/common";
 
-function MobileHeader({ title, className, iconClassName, trash  }) {
+function MobileHeader({ title, className, iconClassName }) {
   const navigate = useNavigate();
   return (
     <div
@@ -17,8 +17,6 @@ function MobileHeader({ title, className, iconClassName, trash  }) {
       />
 
       <span className="font-bold text-base text-neutral-800">{title}</span>
-
-      {(trash  ? <Trash /> : "")}
     </div>
   );
 }

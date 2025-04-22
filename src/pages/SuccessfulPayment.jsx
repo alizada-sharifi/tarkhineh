@@ -1,4 +1,3 @@
-import React from "react";
 import { Success } from "../components/icons";
 import { convertToFa } from "../helper/functions";
 import { Button } from "../components/buttons";

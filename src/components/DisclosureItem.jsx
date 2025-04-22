@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { cn } from "../helper/common";
 import { ArrowDown, ArrowUp } from "../components/icons";
 

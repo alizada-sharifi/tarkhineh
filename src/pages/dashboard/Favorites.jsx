@@ -14,13 +14,11 @@ function Favorites() {
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    // تنظیم مقدار اولیه از URL
     const initialQuery = Object.fromEntries([...searchParams]);
     setQuery(initialQuery);
   }, [searchParams]);
 
   useEffect(() => {
-    // اعمال فیلتر براساس جستجو
     if (query.search) {
       const filtered = selectedItems.filter((item) =>
         item.title.toLowerCase().includes(query.search.toLowerCase())

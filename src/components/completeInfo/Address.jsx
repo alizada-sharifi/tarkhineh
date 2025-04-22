@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Add, Close2, Edit, Plus, Trash } from "../icons";
+import { Edit, Plus, TickSquare, Trash } from "../icons";
 import SetAddress from "./SetAddress";
+import { cn } from "../../helper/common";
 
-const Address = ({ list, setList, updateShippingCost }) => {
+const Address = ({ list, setList, updateShippingCost, className }) => {
   const [editedIndex, setEditedIndex] = useState(-1);
   const [isCreating, setIsCreating] = useState(false);
   const [selectedAddressId, setSelectedAddressId] = useState(null);
@@ -55,7 +56,10 @@ const Address = ({ list, setList, updateShippingCost }) => {
       ) : (
         <button
           onClick={handleAddAddress}
-          className="absolute top-4 left-4 text-primary flex items-center text-xs sm:text-sm"
+          className={cn(
+            "absolute top-4 left-4 text-primary flex items-center text-xs sm:text-sm",
+            className
+          )}
         >
           <Plus />
           <span>افزودن آدرس</span>
@@ -64,7 +68,7 @@ const Address = ({ list, setList, updateShippingCost }) => {
 
       {list.length === 0 && !isCreating && (
         <div className="flex items-center justify-center -m-1">
-          <div className="bg-emptyPage bg-cover bg-center w-[131px] h-[127px] flex items-center justify-center">
+          <div className="bg-emptyPage bg-cover bg-center w-[131px] h-[147px] flex items-center justify-center">
             <p className="text-xs absolute left-0 right-0 top-[60%] text-center font-medium text-neutral-600 md:text-sm">
               شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!
             </p>
@@ -141,7 +145,7 @@ const Address = ({ list, setList, updateShippingCost }) => {
                   onClick={saveEditedItem}
                   className="absolute -top-[1px] left-0"
                 >
-                  <Edit />
+                  <TickSquare className={"fill-primary"} />
                 </button>
               ) : (
                 <div className="flex items-center gap-x-3">

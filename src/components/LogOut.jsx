@@ -12,6 +12,7 @@ function LogOut({ isOpen, closeModal }) {
     dispatch(setLoginStatus(false));
     localStorage.clear();
     navigate("/");
+    window.location.reload();
   };
   return (
     <Dialog

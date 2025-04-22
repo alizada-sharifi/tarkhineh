@@ -1,11 +1,14 @@
 import useForm, { FormProvider } from "../../../hooks/UseForm";
 import { messageSchema } from "../../../schemas";
 import { Input, Textarea } from "../../form";
+import ShowToast from "../../../helper/ShowToast";
 function MessageForm() {
-  const { handleSubmit, ...methods } = useForm(messageSchema);
+  const { handleSubmit, reset, ...methods } = useForm(messageSchema);
 
   function onSubmit(data) {
     console.log("data", data);
+    ShowToast("پیام شما با موفقیت ارسال شد");
+    reset();
   }
 
   return (
