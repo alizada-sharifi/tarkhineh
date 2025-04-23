@@ -5,16 +5,12 @@ import { Button } from "../components/buttons";
 import { Note } from "../components/icons";
 import ROUTES from "../router/routePath";
 import { Testmonial } from "../components/branches/testmonial";
-import { SearchInput } from "../components/form";
 
 function Branches() {
   const navigate = useNavigate();
   return (
     <>
       <Banner />
-      <div className="container">
-        <SearchInput />
-      </div>
 
       <Container index={[0, 6]} id={"offers"} title={"پیشنهاد ویژه"} />
       <Container

@@ -1,4 +1,3 @@
-import { SearchInput } from "../../form";
 import Item from "./Item";
 import mainCourse from "../../../assets/images/mainCourse.png";
 import appetizer from "../../../assets/images/appetizer.png";
@@ -28,8 +27,6 @@ function Container() {
 
   return (
     <div className="container pb-8 md:pt-8 md:pb-16">
-      <SearchInput />
-
       <Title text="  منوی رستوران" />
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6  gap-y-10 mt-10">
         {itemsData.map((item, index) => {

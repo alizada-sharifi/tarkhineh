@@ -28,14 +28,14 @@ function FoodDetail() {
   const [foodData, setFoodData] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const favorite = useSelector((state) => state.favorite);
 
+  const favorite = useSelector((state) => state.favorite);
   const cartState = useSelector((state) => state.cart);
+  const { isLoggedIn } = useSelector((state) => state.auth);
+
   const data = useSelector((store) =>
     store.product.products.find((item) => item.slug === slug)
   );
-
-  const isLoggedIn = useSelector((state) => state.auth);
 
   useEffect(() => {
     axios
@@ -51,8 +51,8 @@ function FoodDetail() {
     );
   }
 
-  if (!data) {
-    return <div>محصول مورد نظر پیدا نشد</div>;
+  if (!data && Object.keys(foodData).length > 0) {
+    return <div>محصول در فروشگاه موجود نیست</div>;
   }
 
   const addToCart = () => {
@@ -69,9 +69,65 @@ function FoodDetail() {
     }
   };
 
+  const renderLikeButton = () => {
+    if (isInFavorite(favorite, data.id) && isLoggedIn) {
+      return (
+        <button
+          className="scale-[1.65]"
+          onClick={() => dispatch(disLikeItem(data))}
+        >
+          <FullHeart />
+        </button>
+      );
+    }
+    return (
+      <button className="scale-[1.5]" onClick={likeHandler}>
+        <EmptyHeart />
+      </button>
+    );
+  };
+
+  const renderCartButtons = () => {
+    const count = quantityCount(cartState, data.id);
+    if (!isLoggedIn) return null;
+
+    if (!isInCart(cartState, data.id)) {
+      return (
+        <button
+          className="bg-[#417F56] text-white rounded-md text-xs font-medium py-2.5 px-[35px] md:text-sm lg:py-2.5 lg:px-5 xl:px-12"
+          onClick={addToCart}
+        >
+          افزودن به سبد خرید
+        </button>
+      );
+    }
+
+    return (
+      <>
+        <button
+          onClick={() => dispatch(increase(data))}
+          className="bg-[#417F56] text-white w-6 h-6 rounded mt-1 font-bold flex items-center justify-center md:w-8 md:h-8 scale-110"
+        >
+          +
+        </button>
+        <span className="text-[#417F56] font-semibold mt-1 md:text-lg">
+          {convertToFa(count)}
+        </span>
+        <button
+          onClick={() =>
+            count === 1 ? dispatch(removeItem(data)) : dispatch(decrease(data))
+          }
+          className="bg-[#417F56] text-white w-6 h-6 rounded mt-1 font-bold flex items-center justify-center md:w-8 md:h-8 scale-110"
+        >
+          {count === 1 ? <Trash /> : "-"}
+        </button>
+      </>
+    );
+  };
+
   return (
     <>
-      {/* ============header section ================ */}
+      {/* Header */}
       <div className="bg-primary py-6">
         <div className="container flex mx-auto items-center text-white">
           <LeftToggle
@@ -86,30 +142,19 @@ function FoodDetail() {
 
       <div className="container py-8 max-w-[1224px] mx-auto px-5 text-[#353535] md:flex md:gap-x-4">
         <img
-          src={foodData.image}
-          alt={foodData.title}
+          src={foodData?.image}
+          alt={foodData?.title}
           className="w-full rounded-lg mb-[17px] md:w-[350px]"
         />
 
         <div className="md:flex-1">
           <div className="flex items-center justify-between mb-[17px] px-0.5">
-            <h3 className="font-bold text-lg md:text-2xl">{foodData.title}</h3>
+            <h3 className="font-bold text-lg md:text-2xl">{foodData?.title}</h3>
 
             <div className="flex items-center gap-x-4 text-[#717171]">
-              {isInFavorite(favorite, data.id) && isLoggedIn ? (
-                <button
-                  className="scale-[1.65]"
-                  onClick={() => dispatch(disLikeItem(data))}
-                >
-                  <FullHeart />
-                </button>
-              ) : (
-                <button className="scale-[1.5]" onClick={likeHandler}>
-                  <EmptyHeart />
-                </button>
-              )}
+              {renderLikeButton()}
               <Link to="/cart" className="scale-[1.5]">
-                <ShoppingCart className={"size-4"} />
+                <ShoppingCart className="size-4" />
               </Link>
             </div>
           </div>
@@ -117,8 +162,9 @@ function FoodDetail() {
           <div className="border border-[#CBCBCB] rounded-lg py-2 px-2.5 font-medium md:pb-3 mb-6">
             <p className="mb-1 text-[15px] md:text-base lg:text-lg">محتویات</p>
             <p className="text-[11px] text-[#717171] pr-1 leading-5 md:leading-6 md:text-xs lg:text-sm">
-              {foodData.description}
+              {foodData?.description}
             </p>
+
             <div className="flex items-center justify-between py-2 border-y border-[#CBCBCB] my-1.5 text-[15px] md:my-2 md:text-base lg:text-lg lg:my-3">
               <span>امتیاز</span>
               <Rating
@@ -127,52 +173,17 @@ function FoodDetail() {
                 fullSymbol={<FullStar />}
               />
             </div>
+
             <div className="flex items-center justify-between text-[15px] md:text-base lg:text-lg">
               <span>قیمت</span>
-              {foodData.discountedPrice
+              {foodData?.discountedPrice
                 ? `${convertToFa(foodData.discountedPrice)} تومان`
                 : "ناموجود"}
             </div>
           </div>
 
-          {/* ======================== */}
           <div className="flex items-center gap-x-2.5 justify-center md:justify-end">
-            {isInCart(cartState, data.id) && isLoggedIn ? (
-              <button
-                onClick={() => dispatch(increase(data))}
-                className="bg-[#417F56] text-white w-6 h-6 rounded mt-1 font-bold flex items-center justify-center md:w-8 md:h-8 scale-110"
-              >
-                +
-              </button>
-            ) : (
-              <button
-                className="bg-[#417F56] text-white rounded-md text-xs font-medium py-2.5 px-[35px] md:text-sm lg:py-2.5 lg:px-5 xl:px-12"
-                onClick={addToCart}
-              >
-                افزودن به سبد خرید
-              </button>
-            )}
-            {quantityCount(cartState, data.id) > 0 && isLoggedIn && (
-              <span className="text-[#417F56] font-semibold mt-1 md:text-lg">
-                {convertToFa(quantityCount(cartState, data.id))}
-              </span>
-            )}
-            {quantityCount(cartState, data.id) === 1 && isLoggedIn && (
-              <button
-                onClick={() => dispatch(removeItem(data))}
-                className="bg-[#417F56] text-white w-6 h-6 rounded mt-1 font-bold flex items-center justify-center md:w-8 md:h-8 scale-110"
-              >
-                <Trash />
-              </button>
-            )}
-            {quantityCount(cartState, data.id) > 1 && isLoggedIn && (
-              <button
-                onClick={() => dispatch(decrease(data))}
-                className="bg-[#417F56] text-white w-6 h-6 rounded mt-1 font-bold flex items-center justify-center md:w-8 md:h-8 scale-110"
-              >
-                -
-              </button>
-            )}
+            {renderCartButtons()}
           </div>
         </div>
       </div>

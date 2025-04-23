@@ -18,7 +18,7 @@ function Item({
   slug,
 }) {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const { isLoggedIn } = useSelector((state) => state.auth);
   const cart = useSelector((state) => state.cart);
   const favorite = useSelector((state) => state.favorite);
 

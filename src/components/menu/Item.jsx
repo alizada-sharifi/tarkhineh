@@ -19,7 +19,7 @@ function Item({
   id,
 }) {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn); // Correctly getting isLoggedIn from authSlice
+  const { isLoggedIn } = useSelector((state) => state.auth);
   const cart = useSelector((state) => state.cart);
   const favorite = useSelector((state) => state.favorite);
 

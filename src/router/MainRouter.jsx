@@ -14,7 +14,6 @@ import {
   NotFound,
   Payment,
   Privacy,
-  Result,
   Rules,
   SuccessfulPayment,
 } from "../pages";
@@ -28,10 +27,6 @@ const MainRouter = [
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: ROUTES.RESULT,
-        element: <Result />,
       },
       {
         path: ROUTES.BRANCH,
