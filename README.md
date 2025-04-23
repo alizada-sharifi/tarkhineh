@@ -1,12 +1,32 @@
-# React + Vite
+# 🥗 TARKHINEH – Online Restaurant Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Tarkhineh** is a responsive online restaurant platform built with modern web technologies. This project demonstrates clean UI/UX, dynamic food listing, cart management, and date-based reservation functionalities.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React.js** – Component-based UI development
+- **Vite** – Fast development and build tool
+- **Tailwind CSS** – Utility-first CSS framework for styling
+- **React Router** – Declarative routing for SPA
+- **React Hook Form** – Performant form handling
+- **Zod** – Type-safe schema validation
+- **Axios** – HTTP client for API requests
+- **Swiper.js** – Modern, touch-enabled sliders
+- **JSON Server** – Fake REST API for local testing
+- **Moment-Jalaali** – Persian calendar support based on Moment.js
+- **React Rating** – Customizable star rating component
+- **React Spinners** – Loader components for async operations
+- **React Multi Date Picker** – Persian multi-date picker
+- **Git & GitHub** – Version control and collaboration
 
-## Expanding the ESLint configuration
+## 📦 Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Dynamic food menu with multiple categories
+- Cart management with Redux
+- Persian calendar-based date picker for reservations
+- Responsive design for desktop and mobile
+- Smooth animations and UX-friendly interactions
+
+## 📸 Demo
+
+> 🔗 [https://tarkhineh-alpha.vercel.app/]
