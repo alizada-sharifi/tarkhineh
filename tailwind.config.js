@@ -6,32 +6,6 @@ export default {
       fontFamily: {
         estedad: ["estedad", "sans-serif"],
       },
-      fontSize: {
-        "3.5xl": {
-          "font-size": "2rem",
-          "line-height": "2.8rem",
-        },
-        "4.25xl": {
-          "font-size": "2.5rem",
-          "line-height": "3.5rem",
-        },
-        "4.5xl": {
-          "font-size": "2.75rem",
-          "line-height": "3.81rem",
-        },
-        "5.5xl": {
-          "font-size": "3.5rem",
-          "line-height": "4.1rem",
-        },
-        "6.5xl": {
-          "font-size": "4rem",
-          "line-height": "5.5rem",
-        },
-      },
-      borderRadius: {
-        "4xl": "2rem",
-        "5xl": "4rem",
-      },
       boxShadow: {
         2: "0px 2px 2px 0px #00000040",
         4: "0px 4px 4px 0px #00000040",
